@@ -77,6 +77,15 @@ h2.rowh{font-size:24px;margin:0 0 14px}
 .lock.br{filter:none}.br.lock .soon{background:rgba(38,40,43,.45)}
 body.onbrand .big{background:linear-gradient(180deg,#4b8bff 0%,#2667e6 100%);box-shadow:0 8px 24px rgba(54,124,255,.35)}
 body.onbrand .big.sec{background:#EEF0F3;box-shadow:none}
+/* second tone and pattern */
+.br.light{color:#26282B}.br .dots{fill:#2161DB;stroke:none;opacity:.32}
+.br.light .hl{color:#2161DB}
+.br.light .n{background:linear-gradient(160deg,#26282b 20%,#2667e6 75%,#6b9dff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.v1.br.light .hero-ic{color:#2161DB;opacity:.85}.v3.br.light .ic{color:#2161DB}
+.v3.br.light .ghost{-webkit-text-stroke:1px rgba(33,97,219,.3)}
+.v3.br.light .strip{background:rgba(38,40,43,.08)}.v3.br.light .strip span{border-left-color:rgba(38,40,43,.12)}
+.br.light.lock .soon{background:rgba(250,250,250,.4)}
+.v2.br.light .win{box-shadow:0 2cqw 8cqw rgba(38,40,43,.18)}
 @media(max-width:900px){.shell{grid-template-columns:1fr}aside{min-height:0;flex-direction:row;flex-wrap:wrap}.feature{grid-template-columns:1fr}main{padding:18px 16px}}
 </style>
 </head>
@@ -112,13 +121,14 @@ const PREV={
  9:`<div class="cols2"><div class="cell">Guide<div class="ln"></div></div><div class="cell">Share link<div class="ln c"></div></div></div>`,
  10:`<div class="cell" style="height:14cqw;background:var(--c);opacity:.25"></div><div class="ln" style="width:50%"></div>`};
 function topo(seed){let r=Math.sin(seed*9.7)*0.5+0.5,cx=40+r*90,cy=20+((seed*37)%50),out="";for(let k=1;k<=11;k++){let d="";for(let a=0;a<=64;a++){const t=a/64*Math.PI*2,rr=k*9*(1+0.16*Math.sin(3*t+seed)+0.08*Math.sin(5*t+seed*2));d+=(a?"L":"M")+(cx+Math.cos(t)*rr*1.5).toFixed(1)+","+(cy+Math.sin(t)*rr).toFixed(1);}out+=`<path d="${d}Z"/>`;}return `<svg class="topo" viewBox="0 0 160 90" preserveAspectRatio="xMidYMid slice">${out}</svg>`;}
+function dots(){let o="";for(let y=3;y<90;y+=6)for(let x=3;x<160;x+=6)o+=`<circle cx="${x}" cy="${y}" r=".7"/>`;return `<svg class="topo dots" viewBox="0 0 160 90" preserveAspectRatio="xMidYMid slice">${o}</svg>`;}
 function ttl(t){if(!BR)return t;const w=t.split(" ");const last=w.pop();return (w.length?w.join(" ")+" ":"")+`<span class="hl">${last}</span>`;}
 function thumb(c,href,proj){const lock=c.state=="upcoming";const badges=(c.state=="today"?'<span class="badge live">TODAY · LIVE</span>':"")+'<span class="badge dur">90 min</span>'+(lock?'<span class="soon"></span>':"");
- const today=c.state=="today",bg=BR?(today?"#2161DB":"#26282B"):c.color,acc=BR?"#367CFF":c.color,ICS=BR?"ph-light":"ph-fill";
- const base=`class="thumb v${V} ${BR?"br":""} ${today?"today":""} ${lock?"lock":""} ${proj?"proj":""}" href="${href||"../storefront/#class-"+c.n}" style="background:${bg};--c:${acc}"`;
- if(V==1)return `<a ${base}>${BR?topo(c.n+(proj?20:0)):`<div class="pat">${Array(42).fill(`<i class="ph-fill ph-${c.icon}"></i>`).join("")}</div>`}<i class="${ICS} ph-${c.icon} hero-ic"></i>${proj?"":`<span class="n">${String(c.n).padStart(2,"0")}</span>`}<span class="k">${proj?c.date:"Class "+c.n+" · "+c.date}</span><span class="t">${ttl(c.title)}</span>${badges}</a>`;
- if(V==2)return `<a ${base}>${BR?topo(c.n+(proj?20:0)):""}<div class="side"><span class="n">${proj?`<i class="ph-fill ph-${c.icon}"></i>`:String(c.n).padStart(2,"0")}</span><span class="t">${ttl(c.title)}</span></div><div class="win"><div class="bar"><i></i><i></i><i></i></div>${proj?`<div class="bub ai">${c.date}</div><div class="bub me">Next: ${c.next}</div>`:(PREV[c.n]||"")}</div>${badges}</a>`;
- return `<a ${base}>${BR?topo(c.n+(proj?20:0)):""}${proj?"":`<span class="ghost">${c.n}</span>`}<i class="${ICS} ph-${c.icon} ic"></i><span class="t">${ttl(c.title)}</span><span class="date">${c.date}</span><div class="strip">${"PAIR".split("").map(l=>`<span class="${PAIRFOCUS[c.n]==l?"on":""}">${{P:"PINPOINT",A:"ASK",I:"INSPECT",R:"RECORD"}[l]}</span>`).join("")}</div>${badges}</a>`;}
+ const today=c.state=="today",tone=today?"blue":(c.n%2?"dark":"light"),bg=BR?{blue:"#2161DB",dark:"#26282B",light:"#E9EDF3"}[tone]:c.color,acc=BR?"#367CFF":c.color,ICS=BR?"ph-light":"ph-fill";
+ const base=`class="thumb v${V} ${BR?"br "+tone:""} ${today?"today":""} ${lock?"lock":""} ${proj?"proj":""}" href="${href||"../storefront/#class-"+c.n}" style="background:${bg};--c:${acc}"`;
+ if(V==1)return `<a ${base}>${BR?(tone=="light"?dots():topo(c.n+(proj?20:0))):`<div class="pat">${Array(42).fill(`<i class="ph-fill ph-${c.icon}"></i>`).join("")}</div>`}<i class="${ICS} ph-${c.icon} hero-ic"></i>${proj?"":`<span class="n">${String(c.n).padStart(2,"0")}</span>`}<span class="k">${proj?c.date:"Class "+c.n+" · "+c.date}</span><span class="t">${ttl(c.title)}</span>${badges}</a>`;
+ if(V==2)return `<a ${base}>${BR?(tone=="light"?dots():topo(c.n+(proj?20:0))):""}<div class="side"><span class="n">${proj?`<i class="ph-fill ph-${c.icon}"></i>`:String(c.n).padStart(2,"0")}</span><span class="t">${ttl(c.title)}</span></div><div class="win"><div class="bar"><i></i><i></i><i></i></div>${proj?`<div class="bub ai">${c.date}</div><div class="bub me">Next: ${c.next}</div>`:(PREV[c.n]||"")}</div>${badges}</a>`;
+ return `<a ${base}>${BR?(tone=="light"?dots():topo(c.n+(proj?20:0))):""}${proj?"":`<span class="ghost">${c.n}</span>`}<i class="${ICS} ph-${c.icon} ic"></i><span class="t">${ttl(c.title)}</span><span class="date">${c.date}</span><div class="strip">${"PAIR".split("").map(l=>`<span class="${PAIRFOCUS[c.n]==l?"on":""}">${{P:"PINPOINT",A:"ASK",I:"INSPECT",R:"RECORD"}[l]}</span>`).join("")}</div>${badges}</a>`;}
 const btn=(label,prompt,cls="")=>`<button class="big ${cls}" data-p="${encodeURIComponent(prompt)}"><i class="ph-bold ph-copy"></i><span class="lbl">${label}</span></button>`;
 const c=classes[0];
 app.innerHTML=`<section class="feature">${thumb(c)}<div class="info"><span class="chip"><i class="ph-fill ph-broadcast"></i>Today · ${c.date}</span><h1>Class 1: ${c.title}</h1><p>${c.purpose}</p>${btn("Start the Context Interview",steps[1].prompt)}<a class="big sec" href="../storefront/#class-1"><i class="ph-bold ph-list-checks"></i>See all six steps</a></div></section>
