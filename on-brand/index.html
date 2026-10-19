@@ -104,7 +104,7 @@ body.onbrand .big.sec{background:#EEF0F3;box-shadow:none}
 const {classes,steps,projects}=PM, app=document.getElementById("app");
 const RAW=(new URLSearchParams(location.search).get("v")||"1b"), V=+RAW[0], BR=RAW.endsWith("b");
 document.getElementById("s"+RAW).classList.add("on");if(BR)document.body.classList.add("onbrand");
-document.getElementById("vnote").innerHTML=(BR?"<b>On-brand version.</b> Same layout as the version without B, in pairingmind.com's look: carbon tiles with the site's blue contour lines, titles ending in blue, and numerals that fade from white to blue. Today's class is the one solid blue tile. ":"")+{
+document.getElementById("vnote").innerHTML=(BR?"<b>On-brand version.</b> In pairingmind.com\'s look: carbon tiles with the site's blue contour lines, titles ending in blue, and numerals that fade from white to blue. Today's class is the one solid blue tile. ":"")+{
 1:"<b>Pattern.</b> The class icon repeats across the tile as a texture, with one oversized icon bleeding off the edge. The tile is full of colour and shape, with no extra content to write.",
 2:"<b>Preview.</b> Each tile shows a small mock screen of what you'll do in that class: a chat, a comparison, search results, a checklist. Closest to an app-store screenshot.",
 3:"<b>Poster.</b> Type fills the tile: the class name set huge, a giant numeral behind it, and a PAIR strip along the bottom showing which step the class focuses on."}[V];
