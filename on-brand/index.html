@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Storefront, on brand · Pairing Mind</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" integrity="sha384-cPFV+/abYd3INVFHPmSKpBmcnH+Q+bTZW7dv/EiuShUNPkHyFmRF8PsL7Ibfvunk" crossorigin="anonymous"></script>
+<style>
+:root{--ink:#26282B;--paper:#F3F4F6;--blue:#367CFF;--action:#2161DB;--mute:#5B626A;--line:#E2E5E9}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.5 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3,.brand{font-family:"Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:-.02em;margin:0}
+.proto-bar{background:var(--ink);color:#fff;font-size:14px;padding:8px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.proto-bar a{color:#9fc0ff}
+.switch{display:flex;gap:6px}.switch a{color:#fff;text-decoration:none;padding:6px 14px;border-radius:999px;background:#3a3d42;font:700 14px "Plus Jakarta Sans"}.switch a.on{background:#fff;color:var(--ink)}
+.vnote{background:#fff;border-bottom:1px solid var(--line);padding:12px 32px;font-size:16px;color:var(--mute)}.vnote b{color:var(--ink)}
+.shell{display:grid;grid-template-columns:240px 1fr}
+aside{background:#fff;border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column;gap:6px;min-height:100vh}
+.brand{font-weight:800;font-size:20px;display:flex;gap:9px;align-items:center;text-decoration:none;color:var(--ink);padding:0 8px 18px}.brand img{height:24px}.brand .ai{color:var(--blue)}
+aside a.nv{display:flex;gap:12px;align-items:center;padding:11px 12px;border-radius:12px;text-decoration:none;color:var(--ink);font-weight:600}aside a.nv i{font-size:22px}aside a.nv.on{background:#E8F0FF;color:var(--action)}
+main{padding:28px 32px 48px;min-width:0}
+.big{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:14px;padding:18px 24px;font:800 19px "Plus Jakarta Sans";cursor:pointer;color:#fff;background:var(--action);text-decoration:none}.big i{font-size:24px}.big.copied{background:#12B886}.big.sec{background:#EEF0F3;color:var(--ink)}
+.feature{display:grid;grid-template-columns:1.4fr 1fr;border-radius:22px;overflow:hidden;background:#fff;margin-bottom:34px}
+.feature .info{padding:34px 32px;display:flex;flex-direction:column;gap:14px}.feature h1{font-size:34px;line-height:1.08}.feature p{color:var(--mute);margin:0}
+.chip{display:inline-flex;gap:6px;align-items:center;font:700 13px "Plus Jakarta Sans";padding:5px 11px;border-radius:999px;background:#E8F0FF;color:var(--action);align-self:flex-start}
+h2.rowh{font-size:24px;margin:0 0 14px}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(300px,1fr);gap:18px;overflow-x:auto;padding-bottom:10px;margin-bottom:34px}
+.card h3{font-size:17px;margin-top:10px}.card .sub{font-size:14px;color:var(--mute)}
+/* ---------- shared thumb ---------- */
+.thumb{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;color:#fff;display:block;text-decoration:none;container-type:inline-size}
+.feature .thumb{border-radius:0;aspect-ratio:auto;min-height:380px}
+.badge{position:absolute;font:800 11px "Plus Jakarta Sans";padding:4px 8px;border-radius:6px;letter-spacing:.05em;z-index:3}
+.badge.live{background:#E5484D;left:12px;top:12px}.badge.dur{background:rgba(0,0,0,.6);right:12px;bottom:12px}
+.lock .soon{position:absolute;inset:0;background:rgba(243,244,246,.45);z-index:2}
+/* ---------- V1 Pattern: icon field + bleed ---------- */
+.v1 .pat{position:absolute;inset:-10%;display:grid;grid-template-columns:repeat(7,1fr);gap:4cqw;transform:rotate(-12deg);opacity:.16;font-size:9cqw;place-items:center}
+.v1 .hero-ic{position:absolute;right:-6cqw;bottom:-12cqw;font-size:62cqw;opacity:.95}
+.v1 .n{position:absolute;left:5cqw;top:4cqw;font:800 14cqw/1 "Plus Jakarta Sans";letter-spacing:-.04em}
+.v1 .t{position:absolute;left:5cqw;bottom:6cqw;max-width:52%;font:800 6.4cqw/1.05 "Plus Jakarta Sans"}
+.v1 .k{position:absolute;left:5cqw;bottom:calc(6cqw + 15cqw);font:700 3.4cqw "Plus Jakarta Sans";text-transform:uppercase;letter-spacing:.08em;opacity:.9}
+/* ---------- V2 Preview: a mock screen of what you make ---------- */
+.v2{display:grid;grid-template-columns:42% 58%}
+.v2 .side{padding:5cqw 0 5cqw 5cqw;display:flex;flex-direction:column;justify-content:space-between}
+.v2 .n{font:800 13cqw/1 "Plus Jakarta Sans";letter-spacing:-.04em}
+.v2 .t{font:800 5.4cqw/1.08 "Plus Jakarta Sans"}
+.v2 .win{margin:6cqw 0 0 4cqw;background:#fff;border-radius:3cqw 0 0 0;color:var(--ink);padding:3.5cqw;display:flex;flex-direction:column;gap:2.2cqw;box-shadow:0 2cqw 6cqw rgba(0,0,0,.18)}
+.v2 .bar{display:flex;gap:1.2cqw}.v2 .bar i{width:2cqw;height:2cqw;border-radius:50%;background:#D9DCE1;display:block}
+.bub{border-radius:2.4cqw;padding:1.8cqw 2.4cqw;font-size:2.8cqw;line-height:1.25;max-width:85%}
+.bub.me{align-self:flex-end;background:var(--c);color:#fff}.bub.ai{background:#EEF0F3}
+.ln{height:2.2cqw;border-radius:1cqw;background:#E6E8EC}.ln.c{background:var(--c);opacity:.35}
+.mini-row{display:flex;gap:2cqw;align-items:center}.dotc{width:5cqw;height:5cqw;border-radius:50%;background:var(--c);flex:none;display:grid;place-items:center;color:#fff;font-size:3cqw}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:2cqw}.cell{border-radius:1.6cqw;background:#F3F4F6;padding:2cqw;display:flex;flex-direction:column;gap:1.4cqw;font-size:2.6cqw;font-weight:700}
+/* ---------- V3 Poster: type fills the tile ---------- */
+.v3 .ghost{position:absolute;right:-4cqw;top:-14cqw;font:800 78cqw/1 "Plus Jakarta Sans";letter-spacing:-.06em;color:rgba(255,255,255,.14)}
+.v3 .t{position:absolute;left:5cqw;top:5cqw;right:24cqw;font:800 9.6cqw/.98 "Plus Jakarta Sans";letter-spacing:-.03em;text-transform:uppercase}
+.v3 .ic{position:absolute;right:5cqw;top:5cqw;font-size:15cqw}
+.v3 .strip{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(0,0,0,.22)}
+.v3 .strip span{padding:2.2cqw 0;text-align:center;font:800 3.4cqw "Plus Jakarta Sans";letter-spacing:.08em;border-left:1px solid rgba(255,255,255,.18)}.v3 .strip span:first-child{border-left:0}
+.v3 .strip span.on{background:#fff;color:var(--ink)}
+.v3 .date{position:absolute;left:5cqw;bottom:12cqw;font:700 3.6cqw "Plus Jakarta Sans";opacity:.9}
+.v1 .badge.live,.v2 .badge.live{left:auto;right:12px}
+.v3 .badge.dur{display:none}.v3 .badge.live{left:auto;top:auto;right:5cqw;bottom:12cqw}
+.proj .badge{display:none}.v1.proj .k{top:5cqw;bottom:auto}.v3.proj .strip{display:none}.v3.proj .date{bottom:6cqw}
+/* ---------- on-brand versions (B) ---------- */
+.br .topo{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#5B8DFF;stroke-width:.35;opacity:.55}
+.br.today .topo{stroke:#fff;opacity:.35}
+.br>*:not(.topo){position:relative}.br .badge,.br .hero-ic,.br .n,.br .t,.br .k,.br .ic,.br .ghost,.br .strip,.br .date,.br .soon{position:absolute}
+.v2.br>.side,.v2.br>.win{position:relative}.v2.br .n,.v2.br .t{position:static}
+.br .hl{color:#7FA8FF}.br.today .hl{color:#CFE0FF}
+.br .n{background:linear-gradient(160deg,#ffffff 15%,#9DBDFF 55%,#367CFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.br.today .n{background:linear-gradient(160deg,#fff 30%,#CFE0FF 100%);-webkit-background-clip:text;background-clip:text}
+.v1.br .hero-ic{color:#367CFF;opacity:.9}.v1.br.today .hero-ic{color:#fff}
+.v3.br .ghost{color:transparent;-webkit-text-stroke:1px rgba(127,168,255,.45)}
+.v3.br .ic{color:#7FA8FF}.v3.br.today .ic{color:#fff}
+.v3.br .strip{background:rgba(0,0,0,.35)}.v3.br .strip span.on{background:#367CFF;color:#fff}.v3.br.today .strip span.on{background:#fff;color:#2161DB}
+.v2.br .win{box-shadow:0 2cqw 8cqw rgba(0,0,0,.4)}
+.lock.br{filter:none}.br.lock .soon{background:rgba(38,40,43,.45)}
+body.onbrand .big{background:linear-gradient(180deg,#4b8bff 0%,#2667e6 100%);box-shadow:0 8px 24px rgba(54,124,255,.35)}
+body.onbrand .big.sec{background:#EEF0F3;box-shadow:none}
+/* second tone and pattern */
+.br.light{color:#26282B}.br .dots{fill:#2161DB;stroke:none;opacity:.32}
+.br.light .hl{color:#2161DB}
+.br.light .n{background:linear-gradient(160deg,#26282b 20%,#2667e6 75%,#6b9dff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.v1.br.light .hero-ic{color:#2161DB;opacity:.85}.v3.br.light .ic{color:#2161DB}
+.v3.br.light .ghost{-webkit-text-stroke:1px rgba(33,97,219,.3)}
+.v3.br.light .strip{background:rgba(38,40,43,.08)}.v3.br.light .strip span{border-left-color:rgba(38,40,43,.12)}
+.br.light.lock .soon{background:rgba(250,250,250,.4)}
+.v2.br.light .win{box-shadow:0 2cqw 8cqw rgba(38,40,43,.18)}
+@media(max-width:900px){.shell{grid-template-columns:1fr}aside{min-height:0;flex-direction:row;flex-wrap:wrap}.feature{grid-template-columns:1fr}main{padding:18px 16px}}
+</style>
+</head>
+<body>
+<div class="proto-bar"><span>Storefront, on brand · three tile styles · made-up data</span>
+<div class="switch"><a href="?v=1b" id="s1b">1B · Pattern</a><a href="?v=2b" id="s2b">2B · Preview</a><a href="?v=3b" id="s3b">3B · Poster</a></div>
+<a href="../">← All directions</a></div>
+<div class="vnote" id="vnote"></div>
+<div class="shell">
+<aside><a class="brand" href="#"><img src="../shared/mark.png" alt=""><span>p<span class="ai">ai</span>ring mind</span></a>
+<a class="nv on" href="#"><i class="ph-bold ph-house"></i>Home</a><a class="nv" href="../storefront/#class-1"><i class="ph-bold ph-play-circle"></i>Classes</a>
+<a class="nv" href="#"><i class="ph-bold ph-folders"></i>My projects</a><a class="nv" href="#"><i class="ph-bold ph-plug"></i>Set up</a></aside>
+<main id="app"></main></div>
+<script src="../shared/data.js"></script>
+<script>
+const {classes,steps,projects}=PM, app=document.getElementById("app");
+const RAW=(new URLSearchParams(location.search).get("v")||"1b"), V=+RAW[0], BR=RAW.endsWith("b");
+document.getElementById("s"+RAW).classList.add("on");if(BR)document.body.classList.add("onbrand");
+document.getElementById("vnote").innerHTML=(BR?"<b>On-brand version.</b> Same layout as the version without B, in pairingmind.com's look: carbon tiles with the site's blue contour lines, titles ending in blue, and numerals that fade from white to blue. Today's class is the one solid blue tile. ":"")+{
+1:"<b>Pattern.</b> The class icon repeats across the tile as a texture, with one oversized icon bleeding off the edge. The tile is full of colour and shape, with no extra content to write.",
+2:"<b>Preview.</b> Each tile shows a small mock screen of what you'll do in that class: a chat, a comparison, search results, a checklist. Closest to an app-store screenshot.",
+3:"<b>Poster.</b> Type fills the tile: the class name set huge, a giant numeral behind it, and a PAIR strip along the bottom showing which step the class focuses on."}[V];
+const PAIRFOCUS={1:"P",2:"A",3:"I",4:"R",5:"A",6:"I",7:"A",8:"A",9:"I",10:"R"};
+const PREV={
+ 1:`<div class="bub ai">What takes up most of your week?</div><div class="bub me">Planning meals for the family</div><div class="bub ai">Here are three project ideas…</div>`,
+ 2:`<div class="cols2"><div class="cell">Short request<div class="ln"></div><div class="ln" style="width:60%"></div></div><div class="cell" style="background:#E9F8F1">With direction<div class="ln c"></div><div class="ln c"></div><div class="ln c" style="width:70%"></div></div></div>`,
+ 3:`<div class="mini-row"><span class="dotc">1</span><div style="flex:1"><div class="ln c"></div></div></div><div class="mini-row"><span class="dotc">2</span><div style="flex:1"><div class="ln"></div></div></div><div class="mini-row"><span class="dotc">3</span><div style="flex:1"><div class="ln" style="width:70%"></div></div></div>`,
+ 4:`<div class="mini-row"><span class="dotc" style="width:8cqw;height:8cqw"><i class="ph-fill ph-user"></i></span><div style="flex:1;display:grid;gap:1.4cqw"><div class="ln c"></div><div class="ln" style="width:70%"></div></div></div><div class="bub ai">Skill saved: weekly menu</div>`,
+ 5:`<div class="cols2"><div class="cell" style="background:var(--c);opacity:.25;height:12cqw"></div><div class="cell" style="height:12cqw"></div></div><div class="ln"></div><div class="ln" style="width:55%"></div>`,
+ 6:`<div class="ln c"></div><div class="ln"></div><div class="ln"></div><div class="ln" style="width:80%"></div>`,
+ 7:`<div class="mini-row" style="justify-content:space-between"><span class="dotc"><i class="ph-fill ph-envelope"></i></span><div class="ln c" style="flex:1"></div><span class="dotc"><i class="ph-fill ph-table"></i></span><div class="ln c" style="flex:1"></div><span class="dotc"><i class="ph-fill ph-bell"></i></span></div><div class="ln" style="width:60%"></div>`,
+ 8:`<div class="mini-row"><span class="dotc"><i class="ph-bold ph-check"></i></span><div class="ln" style="flex:1"></div></div><div class="mini-row"><span class="dotc"><i class="ph-bold ph-check"></i></span><div class="ln" style="flex:1"></div></div><div class="mini-row"><span class="dotc" style="opacity:.4"></span><div class="ln" style="flex:1;width:70%"></div></div>`,
+ 9:`<div class="cols2"><div class="cell">Guide<div class="ln"></div></div><div class="cell">Share link<div class="ln c"></div></div></div>`,
+ 10:`<div class="cell" style="height:14cqw;background:var(--c);opacity:.25"></div><div class="ln" style="width:50%"></div>`};
+function topo(seed){let r=Math.sin(seed*9.7)*0.5+0.5,cx=40+r*90,cy=20+((seed*37)%50),out="";for(let k=1;k<=11;k++){let d="";for(let a=0;a<=64;a++){const t=a/64*Math.PI*2,rr=k*9*(1+0.16*Math.sin(3*t+seed)+0.08*Math.sin(5*t+seed*2));d+=(a?"L":"M")+(cx+Math.cos(t)*rr*1.5).toFixed(1)+","+(cy+Math.sin(t)*rr).toFixed(1);}out+=`<path d="${d}Z"/>`;}return `<svg class="topo" viewBox="0 0 160 90" preserveAspectRatio="xMidYMid slice">${out}</svg>`;}
+function dots(){let o="";for(let y=3;y<90;y+=6)for(let x=3;x<160;x+=6)o+=`<circle cx="${x}" cy="${y}" r=".7"/>`;return `<svg class="topo dots" viewBox="0 0 160 90" preserveAspectRatio="xMidYMid slice">${o}</svg>`;}
+function ttl(t){if(!BR)return t;const w=t.split(" ");const last=w.pop();return (w.length?w.join(" ")+" ":"")+`<span class="hl">${last}</span>`;}
+function thumb(c,href,proj){const lock=c.state=="upcoming";const badges=(c.state=="today"?'<span class="badge live">TODAY · LIVE</span>':"")+'<span class="badge dur">90 min</span>'+(lock?'<span class="soon"></span>':"");
+ const today=c.state=="today",tone=today?"blue":(c.n%2?"dark":"light"),bg=BR?{blue:"#2161DB",dark:"#26282B",light:"#E9EDF3"}[tone]:c.color,acc=BR?"#367CFF":c.color,ICS=BR?"ph-light":"ph-fill";
+ const base=`class="thumb v${V} ${BR?"br "+tone:""} ${today?"today":""} ${lock?"lock":""} ${proj?"proj":""}" href="${href||"../storefront/#class-"+c.n}" style="background:${bg};--c:${acc}"`;
+ if(V==1)return `<a ${base}>${BR?(tone=="light"?dots():topo(c.n+(proj?20:0))):`<div class="pat">${Array(42).fill(`<i class="ph-fill ph-${c.icon}"></i>`).join("")}</div>`}<i class="${ICS} ph-${c.icon} hero-ic"></i>${proj?"":`<span class="n">${String(c.n).padStart(2,"0")}</span>`}<span class="k">${proj?c.date:"Class "+c.n+" · "+c.date}</span><span class="t">${ttl(c.title)}</span>${badges}</a>`;
+ if(V==2)return `<a ${base}>${BR?(tone=="light"?dots():topo(c.n+(proj?20:0))):""}<div class="side"><span class="n">${proj?`<i class="ph-fill ph-${c.icon}"></i>`:String(c.n).padStart(2,"0")}</span><span class="t">${ttl(c.title)}</span></div><div class="win"><div class="bar"><i></i><i></i><i></i></div>${proj?`<div class="bub ai">${c.date}</div><div class="bub me">Next: ${c.next}</div>`:(PREV[c.n]||"")}</div>${badges}</a>`;
+ return `<a ${base}>${BR?(tone=="light"?dots():topo(c.n+(proj?20:0))):""}${proj?"":`<span class="ghost">${c.n}</span>`}<i class="${ICS} ph-${c.icon} ic"></i><span class="t">${ttl(c.title)}</span><span class="date">${c.date}</span><div class="strip">${"PAIR".split("").map(l=>`<span class="${PAIRFOCUS[c.n]==l?"on":""}">${{P:"PINPOINT",A:"ASK",I:"INSPECT",R:"RECORD"}[l]}</span>`).join("")}</div>${badges}</a>`;}
+const btn=(label,prompt,cls="")=>`<button class="big ${cls}" data-p="${encodeURIComponent(prompt)}"><i class="ph-bold ph-copy"></i><span class="lbl">${label}</span></button>`;
+const c=classes[0];
+app.innerHTML=`<section class="feature">${thumb(c)}<div class="info"><span class="chip"><i class="ph-fill ph-broadcast"></i>Today · ${c.date}</span><h1>Class 1: ${c.title}</h1><p>${c.purpose}</p>${btn("Start the Context Interview",steps[1].prompt)}<a class="big sec" href="../storefront/#class-1"><i class="ph-bold ph-list-checks"></i>See all six steps</a></div></section>
+<h2 class="rowh">All ten classes</h2><div class="rail">${classes.map(k=>`<div class="card">${thumb(k)}<h3>Class ${k.n}: ${k.title}</h3><div class="sub">${k.date}${k.state=="upcoming"?" · Opens on class day":""}</div></div>`).join("")}</div>
+<h2 class="rowh">My projects</h2><div class="rail">${projects.map((p,i)=>`<div class="card">${thumb({n:i+1,title:p.title,color:p.color,icon:p.icon,date:p.area+" · "+p.status,next:p.next,state:"x"},"#",true)}<h3>${p.title}</h3><div class="sub">Next: ${p.next}</div></div>`).join("")}</div>`;
+app.querySelectorAll("button[data-p]").forEach(b=>b.onclick=()=>PM.copy(b,decodeURIComponent(b.dataset.p)));
+</script>
+</body></html>
