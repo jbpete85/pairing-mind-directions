@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>C · Command center · Pairing Mind directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" integrity="sha384-cPFV+/abYd3INVFHPmSKpBmcnH+Q+bTZW7dv/EiuShUNPkHyFmRF8PsL7Ibfvunk" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#16181C;--panel:#1F2228;--panel2:#272B33;--line:#343944;--txt:#F2F3F5;--mute:#A3A9B4;--blue:#367CFF;--lime:#C6F432;--green:#2FD18C}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:400 17px/1.5 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3,.brand{font-family:"Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:-.02em;margin:0}
+.mono{font-family:"JetBrains Mono",monospace;letter-spacing:.02em}
+.proto-bar{background:#000;color:#ddd;font-size:14px;padding:8px 24px;display:flex;justify-content:space-between}.proto-bar a{color:#9fc0ff}
+.hud{display:flex;align-items:center;gap:22px;padding:14px 28px;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:2}
+.brand{font-weight:800;font-size:20px;display:flex;gap:9px;align-items:center;text-decoration:none;color:var(--txt)}.brand img{height:24px;filter:brightness(1.1)}.brand .ai{color:var(--blue)}
+.hud nav{display:flex;gap:4px}.hud nav a{color:var(--mute);text-decoration:none;font-weight:700;padding:8px 14px;border-radius:10px}.hud nav a.on{background:var(--panel2);color:var(--txt)}
+.stats{margin-left:auto;display:flex;gap:10px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:13px;color:var(--mute);display:flex;gap:8px;align-items:center}.stat b{color:var(--txt);font-size:15px}
+.stat .on{width:9px;height:9px;border-radius:50%;background:var(--green)}
+main{padding:24px 28px 48px;display:grid;gap:20px}
+.grid{display:grid;grid-template-columns:1.5fr 1fr;gap:20px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px}
+.label{font:700 12px "JetBrains Mono",monospace;color:var(--mute);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;display:flex;gap:8px;align-items:center}
+.mission{background:var(--blue);border:0;color:#fff;display:grid;grid-template-columns:1fr auto;gap:20px;position:relative;overflow:hidden}
+.mission .label{color:#dce7ff}.mission h1{font-size:44px;line-height:1.03}.mission p{color:#e3ebff;max-width:46ch;font-size:19px}
+.mission .big-ic{font-size:150px;align-self:center;opacity:.95}
+.launch{display:inline-flex;align-items:center;gap:14px;border:0;border-radius:16px;padding:22px 30px;font:800 21px "Plus Jakarta Sans";cursor:pointer;background:var(--lime);color:#16181C;text-decoration:none}
+.launch i{font-size:28px}.launch.copied{background:var(--green)}.launch.sm{padding:14px 20px;font-size:16px}
+.launch.dark{background:var(--panel2);color:var(--txt);box-shadow:inset 0 0 0 1px var(--line)}
+/* level map */
+.map{display:grid;grid-template-columns:repeat(10,1fr);gap:10px}
+.lvl{border-radius:16px;padding:14px 12px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:var(--txt);background:var(--panel2);border:2px solid transparent}
+.lvl .no{font:700 13px "JetBrains Mono";color:var(--mute)}.lvl i{font-size:34px}.lvl .t{font:700 14px/1.2 "Plus Jakarta Sans"}
+.lvl.today{border-color:var(--lime);background:#2A3020}.lvl.today .no{color:var(--lime)}
+.lvl.next i{color:#FF8A5C}.lvl.upcoming{opacity:.55}
+.proj{display:grid;gap:10px}
+.pr{display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:center;background:var(--panel2);border-radius:14px;padding:12px}
+.pr .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:28px;color:#fff}
+.pr h3{font-size:17px}.pr .sub{font-size:14px;color:var(--mute)}
+.tag{font:700 12px "JetBrains Mono";padding:5px 9px;border-radius:8px;background:#11131A;color:var(--lime);white-space:nowrap}
+/* class */
+.brief{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center}
+.brief .lvlno{font:800 120px/1 "Plus Jakarta Sans";letter-spacing:-.05em}
+.objs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.obj{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px;min-height:250px}
+.obj .k{font:700 12px "JetBrains Mono";text-transform:uppercase;letter-spacing:.1em}
+.obj h3{font-size:22px}.obj p{color:var(--mute);margin:0}.obj .launch{margin-top:auto;align-self:flex-start}
+.obj.done{border-color:#24533F;background:#1B2621}.obj .chk{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font:800 20px "Plus Jakarta Sans";background:var(--panel2)}
+.obj.done .chk{background:var(--green);color:#16181C}
+@media(max-width:1000px){.grid,.objs,.brief{grid-template-columns:1fr}.map{grid-template-columns:repeat(2,1fr)}.stats{display:none}.mission{grid-template-columns:1fr}.mission .big-ic{display:none}}
+</style>
+</head>
+<body>
+<div class="proto-bar"><span>Direction C · Command center (Push) · prototype with made-up data</span><a href="../">← All directions</a></div>
+<div class="hud"><a class="brand" href="#home"><img src="../shared/mark.png" alt=""><span>p<span class="ai">ai</span>ring mind</span></a>
+<nav><a href="#home" id="n-home">Command</a><a href="#class-1" id="n-class">Class 1</a></nav>
+<div class="stats"><span class="stat"><span class="on"></span>Claude <b>connected</b></span><span class="stat">Class <b>1 of 10</b></span><span class="stat">Projects <b>3</b></span></div></div>
+<main id="app"></main>
+<script src="../shared/data.js"></script>
+<script>
+const {classes,steps,projects}=PM, app=document.getElementById("app");
+const btn=(label,prompt,cls="")=>`<button class="launch ${cls}" data-p="${encodeURIComponent(prompt)}"><i class="ph-bold ph-copy"></i><span class="lbl">${label}</span></button>`;
+function home(){const c=classes[0];return `
+<div class="grid"><section class="panel mission"><div><div class="label"><i class="ph-fill ph-broadcast"></i>Today's mission · ${c.date}</div><h1>Run your Context Interview</h1>
+<p>Claude interviews you, finds a few project ideas, and saves them here once you approve.</p><div style="display:flex;gap:12px;flex-wrap:wrap">${btn("Copy interview prompt",steps[1].prompt)}<a class="launch dark" href="#class-1"><i class="ph-bold ph-list-checks"></i>Mission steps</a></div></div><i class="ph-fill ph-${c.icon} big-ic"></i></section>
+<section class="panel"><div class="label"><i class="ph-bold ph-folders"></i>Your projects</div><div class="proj">${projects.map(p=>`<div class="pr"><div class="ic" style="background:${p.color}"><i class="ph-fill ph-${p.icon}"></i></div><div><h3>${p.title}</h3><div class="sub">Next: ${p.next}</div></div><span class="tag">${p.status}</span></div>`).join("")}</div></section></div>
+<section class="panel"><div class="label"><i class="ph-bold ph-map-trifold"></i>Course map · 10 classes</div><div class="map">${classes.map(k=>`<a class="lvl ${k.state}" href="#class-${k.n}"><span class="no">L${String(k.n).padStart(2,"0")}${k.state=="today"?" · NOW":""}</span><i class="ph-fill ph-${k.icon}" style="${k.state=="today"?"color:var(--lime)":""}"></i><span class="t">${k.title}</span></a>`).join("")}</div></section>`}
+function cls(n){const c=classes[n-1]||classes[0];return `
+<section class="panel brief" style="border-color:${c.color}"><span class="lvlno" style="color:${c.color}">${String(c.n).padStart(2,"0")}</span><div><div class="label">Mission briefing · ${c.date}</div><h1 style="font-size:40px">${c.title}</h1><p style="color:var(--mute);margin:6px 0 0">${c.purpose}</p></div><i class="ph-fill ph-${c.icon}" style="font-size:100px;color:${c.color}"></i></section>
+<section class="objs">${steps.map((s,i)=>`<div class="obj ${s.done?"done":""}"><div style="display:flex;gap:12px;align-items:center"><span class="chk">${s.done?'<i class="ph-bold ph-check"></i>':i+1}</span><span class="k" style="color:${s.done?"var(--green)":c.color}">${s.kind}</span></div><h3>${s.title}</h3><p>${s.text}</p>${s.prompt?btn("Copy prompt",s.prompt,"sm"):""}</div>`).join("")}</section>`}
+PM.route(r=>{const isC=r.startsWith("class-");app.innerHTML=isC?cls(+r.split("-")[1]):home();document.getElementById("n-home").className=isC?"":"on";document.getElementById("n-class").className=isC?"on":"";
+app.querySelectorAll("button[data-p]").forEach(b=>b.onclick=()=>PM.copy(b,decodeURIComponent(b.dataset.p)));});
+</script>
+</body></html>

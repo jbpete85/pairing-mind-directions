@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>A · Cinematic · Pairing Mind directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" integrity="sha384-cPFV+/abYd3INVFHPmSKpBmcnH+Q+bTZW7dv/EiuShUNPkHyFmRF8PsL7Ibfvunk" crossorigin="anonymous"></script>
+<style>
+:root{--ink:#26282B;--paper:#FAFAFA;--blue:#367CFF;--action:#2161DB;--mute:#5B626A;--line:#E2E5E9;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.5 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3,.brand{font-family:"Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:-.025em;margin:0}
+a{color:inherit}
+.proto-bar{background:var(--ink);color:#fff;font-size:14px;padding:8px 24px;display:flex;gap:16px;justify-content:space-between}
+.proto-bar a{color:#9fc0ff}
+header{display:flex;align-items:center;gap:28px;padding:18px 40px;background:var(--paper)}
+.brand{font-weight:800;font-size:22px;display:flex;gap:10px;align-items:center;text-decoration:none}.brand img{height:26px}.brand .ai{color:var(--blue)}
+nav{display:flex;gap:6px}nav a{text-decoration:none;font-weight:600;padding:8px 14px;border-radius:999px;color:var(--mute)}nav a.on{background:var(--ink);color:#fff}
+.who{margin-left:auto;font-size:15px;color:var(--mute);display:flex;gap:8px;align-items:center}.dot{width:9px;height:9px;border-radius:50%;background:#12B886}
+/* hero band */
+.hero{display:grid;grid-template-columns:1.15fr 1fr;min-height:520px}
+.hero .copy{padding:64px 40px 56px;display:flex;flex-direction:column;justify-content:center;background:var(--paper)}
+.hero h1{font-size:clamp(40px,5vw,68px);line-height:1.02;font-weight:800}
+.hero p{font-size:21px;color:var(--mute);max-width:30ch;margin:18px 0 28px}
+.hero .art{position:relative;overflow:hidden;color:#fff;display:flex;align-items:flex-end;padding:40px}
+.hero .art .num{position:absolute;right:-20px;top:-60px;font:800 340px/1 "Plus Jakarta Sans";color:rgba(255,255,255,.16)}
+.hero .art i{position:absolute;right:48px;top:48px;font-size:120px;opacity:.95}
+.hero .art .lab{font:700 15px "Plus Jakarta Sans";text-transform:uppercase;letter-spacing:.08em;opacity:.85}
+.hero .art h2{font-size:40px;line-height:1.05;margin-top:6px;max-width:12ch}
+.big{display:inline-flex;align-items:center;gap:12px;border:0;border-radius:16px;padding:20px 28px;font:700 20px "Plus Jakarta Sans";cursor:pointer;color:#fff;background:var(--action);text-decoration:none}
+.big i{font-size:26px}.big.copied{background:#12B886}
+.big.ghost{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+/* class strip */
+.strip{display:grid;grid-template-columns:repeat(10,1fr);min-height:230px}
+.tile{position:relative;color:#fff;padding:18px 16px;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.tile .n{font:800 64px/1 "Plus Jakarta Sans";opacity:.95}.tile i{position:absolute;right:12px;top:14px;font-size:30px;opacity:.9}
+.tile .t{font:700 16px/1.2 "Plus Jakarta Sans"}.tile .d{font-size:13px;opacity:.85}
+.tile.today{outline:4px solid var(--ink);outline-offset:-4px}
+.tile .badge{position:absolute;left:16px;top:86px;background:#fff;color:var(--ink);font:700 12px "Plus Jakarta Sans";padding:3px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+/* projects band */
+.band{display:grid;grid-template-columns:320px 1fr;background:var(--ink);color:#fff}
+.band .lead{padding:48px 40px}.band .lead h2{font-size:38px;line-height:1.05}.band .lead p{color:#b8bcc4}
+.cards{display:grid;grid-template-columns:repeat(3,1fr)}
+.pc{padding:36px 28px;border-left:1px solid #3a3d42}.pc .ic{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;font-size:34px;margin-bottom:22px}
+.pc h3{font-size:24px}.pc .st{display:inline-block;margin:10px 0 14px;font:700 13px "Plus Jakarta Sans";padding:4px 10px;border-radius:999px;background:#fff;color:var(--ink)}
+.pc p{color:#c9ccd2;margin:0}
+footer{padding:28px 40px;color:var(--mute);font-size:15px}
+/* class page */
+.chero{display:grid;grid-template-columns:1fr 1fr;color:#fff;min-height:420px}
+.chero .l{padding:56px 40px;display:flex;flex-direction:column;justify-content:flex-end}.chero h1{font-size:clamp(40px,4.6vw,64px);line-height:1.02}
+.chero .r{position:relative;overflow:hidden;background:rgba(0,0,0,.12)}.chero .r .num{position:absolute;right:-10px;bottom:-70px;font:800 420px/1 "Plus Jakarta Sans";color:rgba(255,255,255,.15)}
+.chero .r i{position:absolute;left:50%;top:50%;transform:translate(-50%,-60%);font-size:180px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr)}
+.st{padding:36px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;display:flex;flex-direction:column;gap:12px;min-height:300px}
+.st .k{font:800 15px "Plus Jakarta Sans";text-transform:uppercase;letter-spacing:.08em}
+.st .nn{font:800 56px/1 "Plus Jakarta Sans"}.st h3{font-size:26px}.st p{color:var(--mute);margin:0}
+.st .big{margin-top:auto;align-self:flex-start;font-size:17px;padding:16px 22px}
+.st.done{background:#F2FBF7}.st.done .nn{color:#12B886}
+@media(max-width:900px){.hero,.band,.chero{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,1fr)}.cards,.steps{grid-template-columns:1fr}header{padding:14px 18px;flex-wrap:wrap}.hero .copy,.band .lead,.chero .l{padding:36px 18px}}
+</style>
+</head>
+<body>
+<div class="proto-bar"><span>Direction A · Cinematic (Refine) · prototype with made-up data</span><a href="../">← All directions</a></div>
+<header><a class="brand" href="#home"><img src="../shared/mark.png" alt=""><span>p<span class="ai">ai</span>ring mind</span></a>
+<nav><a href="#home" id="n-home">Course</a><a href="#class-1" id="n-class">Class 1</a></nav>
+<div class="who"><span class="dot"></span>Claude connected · Sam</div></header>
+<main id="app"></main>
+<footer>Pairing Mind · Founders Sprint</footer>
+<script src="../shared/data.js"></script>
+<script>
+const {classes,steps,projects}=PM, app=document.getElementById("app");
+const btn=(label,prompt,cls="")=>`<button class="big ${cls}" data-p="${encodeURIComponent(prompt)}"><i class="ph-bold ph-copy"></i><span class="lbl">${label}</span></button>`;
+function home(){const c=classes[0];return `
+<section class="hero"><div class="copy"><h1>Welcome, Sam.<br>Today you build your first app.</h1>
+<p>Class 1 starts with the Context Interview. Your AI asks the questions; you keep the ideas.</p>
+<div class="row">${btn("Copy interview prompt",steps[1].prompt)}<a class="big ghost" href="#class-1"><i class="ph-bold ph-arrow-right"></i>Open Class 1</a></div></div>
+<a class="art" href="#class-1" style="background:${c.color};text-decoration:none"><span class="num">01</span><i class="ph-fill ph-${c.icon}"></i><div><div class="lab">Today · ${c.date}</div><h2>${c.title}</h2></div></a></section>
+<section class="strip">${classes.map(k=>`<a class="tile ${k.state}" href="#class-${k.n}" style="background:${k.color}"><i class="ph-fill ph-${k.icon}"></i><span class="n">${String(k.n).padStart(2,"0")}</span>${k.state=="today"?'<span class="badge">Today</span>':""}<div><div class="t">${k.title}</div><div class="d">${k.date}</div></div></a>`).join("")}</section>
+<section class="band"><div class="lead"><h2>Your projects</h2><p>Saved from your interview. Each keeps its next step.</p></div>
+<div class="cards">${projects.map(p=>`<div class="pc"><div class="ic" style="background:${p.color}"><i class="ph-fill ph-${p.icon}"></i></div><h3>${p.title}</h3><span class="st">${p.status}</span><p>Next: ${p.next}</p></div>`).join("")}</div></section>`}
+function cls(n){const c=classes[n-1]||classes[0];return `
+<section class="chero" style="background:${c.color}"><div class="l"><div style="font:700 15px 'Plus Jakarta Sans';text-transform:uppercase;letter-spacing:.08em;opacity:.85">Class ${c.n} · ${c.date}</div><h1>${c.title}</h1><p style="font-size:20px;opacity:.9;max-width:34ch">${c.purpose}</p></div>
+<div class="r"><span class="num">${String(c.n).padStart(2,"0")}</span><i class="ph-fill ph-${c.icon}"></i></div></section>
+<section class="steps">${steps.map((s,i)=>`<div class="st ${s.done?"done":""}"><span class="nn">${s.done?'<i class="ph-bold ph-check"></i>':i+1}</span><span class="k" style="color:${c.color}">${s.kind}</span><h3>${s.title}</h3><p>${s.text}</p>${s.prompt?btn("Copy prompt",s.prompt):""}</div>`).join("")}</section>`}
+PM.route(r=>{app.innerHTML=r.startsWith("class-")?cls(+r.split("-")[1]):home();document.getElementById("n-home").className=r=="home"?"on":"";document.getElementById("n-class").className=r.startsWith("class")?"on":"";
+app.querySelectorAll("button[data-p]").forEach(b=>b.onclick=()=>PM.copy(b,decodeURIComponent(b.dataset.p)));});
+</script>
+</body></html>

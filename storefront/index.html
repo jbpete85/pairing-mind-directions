@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>B · Storefront · Pairing Mind directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" integrity="sha384-cPFV+/abYd3INVFHPmSKpBmcnH+Q+bTZW7dv/EiuShUNPkHyFmRF8PsL7Ibfvunk" crossorigin="anonymous"></script>
+<style>
+:root{--ink:#26282B;--paper:#F3F4F6;--blue:#367CFF;--action:#2161DB;--mute:#5B626A;--line:#E2E5E9}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.5 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3,.brand{font-family:"Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:-.02em;margin:0}
+.proto-bar{background:var(--ink);color:#fff;font-size:14px;padding:8px 24px;display:flex;justify-content:space-between}.proto-bar a{color:#9fc0ff}
+.shell{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 37px)}
+aside{background:#fff;border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column;gap:6px;position:sticky;top:0;height:100vh}
+.brand{font-weight:800;font-size:20px;display:flex;gap:9px;align-items:center;text-decoration:none;color:var(--ink);padding:0 8px 18px}.brand img{height:24px}.brand .ai{color:var(--blue)}
+aside a.nv{display:flex;gap:12px;align-items:center;padding:11px 12px;border-radius:12px;text-decoration:none;color:var(--ink);font-weight:600}aside a.nv i{font-size:22px}
+aside a.nv.on{background:#E8F0FF;color:var(--action)}
+.conn{margin-top:auto;background:#EAF8F2;color:#11744f;border-radius:12px;padding:12px;font-size:14px;font-weight:600;display:flex;gap:8px;align-items:center}
+main{padding:28px 32px 48px;min-width:0}
+.feature{display:grid;grid-template-columns:1.4fr 1fr;gap:0;border-radius:22px;overflow:hidden;background:#fff;margin-bottom:34px}
+.thumb{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;color:#fff;display:block;text-decoration:none}
+.thumb .n{position:absolute;left:18px;bottom:6px;font:800 92px/1 "Plus Jakarta Sans";letter-spacing:-.05em}
+.thumb i.ic{position:absolute;right:18px;top:16px;font-size:54px}
+.thumb .cap{position:absolute;left:18px;top:16px;font:800 22px/1.1 "Plus Jakarta Sans";max-width:62%;text-transform:uppercase}
+.thumb .dur{position:absolute;right:12px;bottom:12px;background:rgba(0,0,0,.72);font:700 12px "Plus Jakarta Sans";padding:3px 8px;border-radius:6px}
+.thumb .live{position:absolute;left:12px;bottom:12px;background:#E5484D;font:800 12px "Plus Jakarta Sans";padding:4px 9px;border-radius:6px;letter-spacing:.06em}
+.thumb .play{position:absolute;inset:0;display:grid;place-items:center;font-size:80px;opacity:0}
+.feature .thumb{border-radius:0;aspect-ratio:auto;min-height:360px}
+.feature .thumb .n{font-size:180px}.feature .thumb i.ic{font-size:96px}.feature .thumb .cap{font-size:34px}
+.feature .info{padding:34px 32px;display:flex;flex-direction:column;gap:14px}
+.feature h1{font-size:34px;line-height:1.08}.feature p{color:var(--mute);margin:0}
+.chip{display:inline-flex;gap:6px;align-items:center;font:700 13px "Plus Jakarta Sans";padding:5px 11px;border-radius:999px;background:#E8F0FF;color:var(--action);align-self:flex-start}
+.big{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:14px;padding:18px 24px;font:800 19px "Plus Jakarta Sans";cursor:pointer;color:#fff;background:var(--action);text-decoration:none}
+.big i{font-size:24px}.big.copied{background:#12B886}.big.sec{background:#EEF0F3;color:var(--ink)}
+h2.rowh{font-size:24px;margin:0 0 14px;display:flex;justify-content:space-between;align-items:baseline}h2.rowh small{font:600 15px "Source Sans 3";color:var(--mute)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:18px;overflow-x:auto;padding-bottom:10px;margin-bottom:34px;scrollbar-width:thin}
+.card .meta{display:flex;gap:10px;margin-top:10px}.card .meta .av{width:36px;height:36px;border-radius:50%;flex:none;display:grid;place-items:center;color:#fff;font-size:18px}
+.card h3{font-size:17px;line-height:1.25}.card .sub{font-size:14px;color:var(--mute)}
+.rail .thumb .cap{font-size:15px;max-width:58%}.rail .thumb .n{font-size:62px;bottom:4px}.rail .thumb i.ic{font-size:38px}
+.rail .thumb .live{left:auto;right:72px}
+.lock{filter:saturate(.35) brightness(1.05)}
+.prompt .thumb{background:var(--ink)}.prompt .thumb .cap{max-width:80%}
+/* class page */
+.watch{display:grid;grid-template-columns:1fr 380px;gap:28px}
+.watch .thumb{aspect-ratio:16/9;border-radius:20px}.watch .thumb .n{font-size:200px}.watch .thumb i.ic{font-size:110px}.watch .thumb .cap{font-size:38px}
+.watch h1{font-size:32px;margin:18px 0 6px}.watch .desc{color:var(--mute);margin:0 0 18px}
+.now{background:#fff;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.list{background:#fff;border-radius:20px;padding:12px;align-self:start}
+.li{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:10px;border-radius:14px;cursor:pointer;align-items:center}.li:hover,.li.on{background:#F3F6FC}
+.li .mini{aspect-ratio:16/9;border-radius:10px;position:relative;color:#fff;display:grid;place-items:center;font:800 30px "Plus Jakarta Sans"}
+.li .mini.done{background:#12B886!important}.li h3{font-size:16px}.li .k{font:700 12px "Plus Jakarta Sans";text-transform:uppercase;letter-spacing:.06em;color:var(--mute)}
+@media(max-width:900px){.shell{grid-template-columns:1fr}aside{position:static;height:auto;flex-direction:row;flex-wrap:wrap}.feature,.watch{grid-template-columns:1fr}main{padding:18px 16px}}
+</style>
+</head>
+<body>
+<div class="proto-bar"><span>Direction B · Storefront (Extend) · prototype with made-up data</span><a href="../">← All directions</a></div>
+<div class="shell">
+<aside><a class="brand" href="#home"><img src="../shared/mark.png" alt=""><span>p<span class="ai">ai</span>ring mind</span></a>
+<a class="nv" id="n-home" href="#home"><i class="ph-bold ph-house"></i>Home</a>
+<a class="nv" id="n-class" href="#class-1"><i class="ph-bold ph-play-circle"></i>Classes</a>
+<a class="nv" href="#home"><i class="ph-bold ph-folders"></i>My projects</a>
+<a class="nv" href="#home"><i class="ph-bold ph-plug"></i>Set up</a>
+<div class="conn"><i class="ph-fill ph-check-circle"></i>Claude connected</div></aside>
+<main id="app"></main></div>
+<script src="../shared/data.js"></script>
+<script>
+const {classes,steps,projects}=PM, app=document.getElementById("app");
+const btn=(label,prompt,cls="")=>`<button class="big ${cls}" data-p="${encodeURIComponent(prompt)}"><i class="ph-bold ph-copy"></i><span class="lbl">${label}</span></button>`;
+const thumb=(c,extra="")=>`<a class="thumb ${c.state=="upcoming"?"lock":""}" href="#class-${c.n}" style="background:${c.color}"><span class="cap">${c.title}</span><i class="ph-fill ph-${c.icon} ic"></i><span class="n">${String(c.n).padStart(2,"0")}</span>${c.state=="today"?'<span class="live">TODAY · LIVE</span>':""}<span class="dur">90 min</span>${extra}</a>`;
+function home(){const c=classes[0];return `
+<section class="feature">${thumb(c)}<div class="info"><span class="chip"><i class="ph-fill ph-broadcast"></i>Today · ${c.date}</span><h1>Class 1: ${c.title}</h1><p>${c.purpose}</p>
+${btn("Start the Context Interview",steps[1].prompt)}<a class="big sec" href="#class-1"><i class="ph-bold ph-list-checks"></i>See all six steps</a></div></section>
+<h2 class="rowh">All ten classes<small>Scroll →</small></h2>
+<div class="rail">${classes.map(k=>`<div class="card">${thumb(k)}<div class="meta"><div><h3>Class ${k.n}: ${k.title}</h3><div class="sub">${k.date}${k.state=="upcoming"?" · Opens on class day":""}</div></div></div></div>`).join("")}</div>
+<h2 class="rowh">Prompts to start with<small>Copy, then paste into Claude</small></h2>
+<div class="rail">${[["Context Interview","chat-circle-text",steps[1].prompt,"#367CFF"],["Get a build brief","lightbulb",steps[3].prompt,"#7C5CFF"],["Record my progress","floppy-disk",steps[5].prompt,"#12B886"]].map(([t,ic,p,col])=>`<div class="card prompt"><div class="thumb" style="background:${col}"><span class="cap">${t}</span><i class="ph-fill ph-${ic} ic"></i></div><div class="meta" style="justify-content:space-between;align-items:center"><h3>${t}</h3>${btn("Copy",p).replace('class="big ','class="big sec ')}</div></div>`).join("")}</div>
+<h2 class="rowh">My projects</h2>
+<div class="rail">${projects.map(p=>`<div class="card"><div class="thumb" style="background:${p.color}"><span class="cap">${p.title}</span><i class="ph-fill ph-${p.icon} ic"></i><span class="dur">${p.status}</span></div><div class="meta"><div><h3>${p.title}</h3><div class="sub">${p.area} · Next: ${p.next}</div></div></div></div>`).join("")}</div>`}
+function cls(n){const c=classes[n-1]||classes[0];return `
+<section class="watch"><div>${thumb(c)}<h1>Class ${c.n}: ${c.title}</h1><p class="desc">${c.date} · ${c.purpose}</p>
+<div class="now" id="now"></div></div>
+<div class="list">${steps.map((s,i)=>`<div class="li ${i==1?"on":""}" data-i="${i}"><div class="mini ${s.done?"done":""}" style="background:${c.color}">${s.done?'<i class="ph-bold ph-check"></i>':i+1}</div><div><div class="k">${s.kind}</div><h3>${s.title}</h3></div></div>`).join("")}</div></section>`}
+function showStep(i){const s=steps[i],now=document.getElementById("now");now.innerHTML=`<span class="chip">Step ${i+1} · ${s.kind}</span><h2 style="font-size:26px">${s.title}</h2><p style="margin:0;color:var(--mute)">${s.text}</p>${s.prompt?btn("Copy prompt for Claude",s.prompt):""}`;bind();
+document.querySelectorAll(".li").forEach(l=>l.classList.toggle("on",+l.dataset.i==i));}
+function bind(){app.querySelectorAll("button[data-p]").forEach(b=>b.onclick=()=>PM.copy(b,decodeURIComponent(b.dataset.p)));}
+PM.route(r=>{const isC=r.startsWith("class-");app.innerHTML=isC?cls(+r.split("-")[1]):home();document.getElementById("n-home").classList.toggle("on",!isC);document.getElementById("n-class").classList.toggle("on",isC);
+if(isC){document.querySelectorAll(".li").forEach(l=>l.onclick=()=>showStep(+l.dataset.i));showStep(1);}bind();});
+</script>
+</body></html>
